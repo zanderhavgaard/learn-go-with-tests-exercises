@@ -18,15 +18,25 @@ type Circle struct {
 	Radius float64
 }
 
-type Shape interface {
-	// interface
-	Area() float64 // type must have a method with this signature
-}
-
 func (c Circle) Area() float64 {
 	// method
 	area := math.Pi * c.Radius * c.Radius
 	return area
+}
+
+type Triangle struct {
+	Base   float64
+	Height float64
+}
+
+func (t Triangle) Area() float64 {
+	area := (t.Base * t.Height) * 0.5
+	return area
+}
+
+type Shape interface {
+	// interface
+	Area() float64 // type must have a method with this signature
 }
 
 func Perimeter(rectangle Rectangle) float64 {
